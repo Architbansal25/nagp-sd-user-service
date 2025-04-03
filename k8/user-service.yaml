@@ -44,3 +44,22 @@ spec:
       port: 9092
       targetPort: 9092
   type: ClusterIP
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: user-service
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - istio-ingressgateway
+  http:
+    - match:
+        - uri:
+            prefix: /auth
+      route:
+        - destination:
+            host: user-service.default.svc.cluster.local
+            port:
+              number: 9092
