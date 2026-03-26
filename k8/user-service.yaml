@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: 039612866426.dkr.ecr.ap-south-1.amazonaws.com/usersvc:latest
+          image: 978430483281.dkr.ecr.ap-south-1.amazonaws.com/usersvc:latest
           ports:
             - containerPort: 9092
           env:
